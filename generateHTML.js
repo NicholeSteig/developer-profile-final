@@ -26,7 +26,7 @@ const colors = {
 
 };
 
-function generateHTML(data, info) {
+function generateHTML(data) {
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
