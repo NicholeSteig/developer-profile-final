@@ -196,11 +196,14 @@ function startQuestions() {
 //     })
 // }
 
-function makePDF(info) {
-    const html = generateHTML(info);
+function makePDF(data) {
+    const html = generateHTML(data);
     writeFileAsync("index.html", html);
     options = { format: 'Letter' };
-    pdf.create(html, options).toFile("./profile", res);
+    pdf.create(html, options).toFile("./profile", function (err, res){
+        if (err)
+        return console.log(err);
+    });
 };
 
 startQuestions();
